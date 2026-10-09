@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "title": "Dirty Cut — muško i žensko šišanje | Novi Sad",
+    "description": "Dirty Cut je unisex frizerski salon u Novom Sadu: muško i žensko šišanje, fade, brada, farbanje, pramenovi i svečane frizure. Bulevar Jovana Dučića 39D. Zakaži termin preko WhatsApp-a ili Instagrama.",
+    "ogAlt": "Dirty Cut logo na betonu"
+  },
+  "a11y": {
+    "skipToContent": "Preskoči na sadržaj",
+    "home": "Dirty Cut — početna",
+    "menuOpen": "Otvori meni",
+    "menuClose": "Zatvori meni",
+    "langSwitch": "Izbor jezika",
+    "mainNav": "Glavna navigacija",
+    "close": "Zatvori",
+    "prev": "Prethodna slika",
+    "next": "Sledeća slika",
+    "stars": "{n} od 5 zvezdica",
+    "toTop": "Na vrh stranice",
+    "soundOn": "Uključi zvuk",
+    "soundOff": "Isključi zvuk",
+    "mapTitle": "Mapa: Dirty Cut, Bulevar Jovana Dučića 39D, Novi Sad",
+    "reviewsSlider": "Recenzije, prevuci za još",
+    "phone": "Pozovi Dirty Cut",
+    "whatsapp": "Piši nam na WhatsApp",
+    "instagram": "Dirty Cut na Instagramu"
+  },
+  "nav": {
+    "services": "Usluge",
+    "gallery": "Galerija",
+    "reviews": "Ocene",
+    "about": "O nama",
+    "location": "Lokacija",
+    "book": "Zakaži"
+  },
+  "intro": {
+    "skip": "Preskoči",
+    "label": "Uvodna animacija"
+  },
+  "hero": {
+    "eyebrow": "Unisex frizerski salon · Novi Sad",
+    "line1": "Prljavo ime.",
+    "line2": "Čist rez.",
+    "sub": "Muško i žensko šišanje, fade, brada, boja i svečane frizure — u salonu od betona, crvenih zavesa i zelenila na Bulevaru Jovana Dučića.",
+    "cta": "Zakaži termin",
+    "ctaSecondary": "Pogledaj usluge",
+    "reviews": "{count} recenzija na Google-u",
+    "imgAlt": "Frizer šiša mušteriju mašinicom u salonu Dirty Cut, odraz u ogledalu",
+    "scroll": "Skroluj"
+  },
+  "status": {
+    "open": "Otvoreno sada",
+    "closed": "Zatvoreno",
+    "closesAt": "Zatvara se u {time}",
+    "opensAt": "Otvara se u {time}",
+    "opensTomorrow": "Otvara se sutra u {time}",
+    "opensOn": "Otvara se {day} u {time}"
+  },
+  "days": {
+    "mon": "ponedeljak",
+    "tue": "utorak",
+    "wed": "sreda",
+    "thu": "četvrtak",
+    "fri": "petak",
+    "sat": "subota",
+    "sun": "nedelja",
+    "onMon": "u ponedeljak",
+    "onTue": "u utorak",
+    "onWed": "u sredu",
+    "onThu": "u četvrtak",
+    "onFri": "u petak",
+    "onSat": "u subotu",
+    "onSun": "u nedelju",
+    "short": {
+      "mon": "pon",
+      "tue": "uto",
+      "wed": "sre",
+      "thu": "čet",
+      "fri": "pet",
+      "sat": "sub",
+      "sun": "ned"
+    },
+    "closed": "zatvoreno",
+    "today": "danas"
+  },
+  "months": {
+    "short": ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec"]
+  },
+  "services": {
+    "kicker": "01 — Usluge i cene",
+    "title": "Rez po meri",
+    "intro": "Isti salon, dve stolice, jedan standard: precizno, čisto, bez žurbe.",
+    "tabMen": "Muško",
+    "tabWomen": "Žensko",
+    "priceOnRequest": "Cena na upit",
+    "currency": "RSD",
+    "minutes": "{n} min",
+    "note": "Cene su informativne. Tačnu cenu za tvoju kosu dobijaš pri zakazivanju.",
+    "bookThis": "Zakaži"
+  },
+  "gallery": {
+    "kicker": "02 — Galerija radova",
+    "title": "Iz stolice",
+    "intro": "Radovi i prostor salona. Klikni na fotografiju za pun prikaz.",
+    "open": "Otvori fotografiju: {alt}",
+    "counter": "{i} / {n}",
+    "instaTitle": "Više radova na Instagramu",
+    "instaCta": "Prati @{handle}",
+    "alt": {
+      "work1": "Frizer u ljubičastom duksu šiša mušteriju mašinicom, odraz u ogledalu",
+      "work2": "Mušterija sa negovanom dugom bradom i oblikovanim brkovima posle tretmana",
+      "salon1": "Enterijer salona: dve crne frizerske stolice, betonski zid, crvene zavese i biljke",
+      "salon2": "Bordo frizerska stolica ispred ogledala u salonu sa betonskim zidovima"
+    }
+  },
+  "reviews": {
+    "kicker": "03 — Ocene",
+    "title": "Pet od pet",
+    "count": "{count} recenzija na Google-u",
+    "seeAll": "Pogledaj sve recenzije",
+    "googleLabel": "Prosečna ocena na Google-u",
+    "leaveTitle": "Ostavi ocenu",
+    "leaveIntro": "Bio si kod nas? Oceni svoj rez — ocena ide na naš Google profil ili direktno nama.",
+    "yourRating": "Tvoja ocena",
+    "ratingLabels": ["Loše", "Može bolje", "Dobro", "Odlično", "Savršeno"],
+    "textLabel": "Tvoj utisak",
+    "textPlaceholder": "Kako ti se dopao rez, atmosfera, usluga…",
+    "nameLabel": "Ime (opciono)",
+    "toGoogle": "Objavi na Google-u",
+    "toSalon": "Pošalji salonu",
+    "copiedGoogle": "Tekst ocene je kopiran — nalepi ga na Google profilu.",
+    "thanks": "Hvala na oceni!",
+    "errRating": "Izaberi broj zvezdica.",
+    "errText": "Napiši bar par reči (najmanje 10 karaktera).",
+    "messageIntro": "Ocena za Dirty Cut: {stars} ({n}/5)",
+    "messageFrom": "— {name}"
+  },
+  "about": {
+    "kicker": "04 — O nama",
+    "title": "Beton. Čelik. Karakter.",
+    "p1": "Dirty Cut je unisex frizerski salon u Novom Sadu. Muškarci i žene sede u istoj stolici i dobijaju isto: rez koji je osmišljen za njih, a ne prepisan iz kataloga.",
+    "p2": "Sirovi beton, crvene zavese i zelenilo — prostor je grub spolja, a precizan iznutra. Baš kao i dobar fade.",
+    "fact1Value": "5.0",
+    "fact1Label": "Google ocena",
+    "fact2Value": "M / Ž",
+    "fact2Label": "unisex salon",
+    "fact3Value": "39D",
+    "fact3Label": "Bulevar Jovana Dučića",
+    "imgAlt": "Bordo frizerska stolica u salonu Dirty Cut"
+  },
+  "booking": {
+    "kicker": "05 — Zakazivanje",
+    "title": "Zakaži termin",
+    "intro": "Izaberi uslugu, dan i okvirno vreme. Poruka se automatski sastavlja — samo je pošalji.",
+    "service": "Usluga",
+    "servicePlaceholder": "Izaberi uslugu",
+    "groupMen": "Muško",
+    "groupWomen": "Žensko",
+    "date": "Datum",
+    "otherDate": "Ili izaberi drugi datum",
+    "time": "Okvirno vreme",
+    "timeHint": "Prvo izaberi datum.",
+    "noSlots": "Za ovaj dan više nema slobodnih termina.",
+    "name": "Ime i prezime",
+    "phone": "Broj telefona (opciono)",
+    "note": "Napomena (opciono)",
+    "notePlaceholder": "Npr. kratko sa strane, duže gore…",
+    "sendWhatsApp": "Pošalji preko WhatsApp-a",
+    "sendInstagram": "Pošalji preko Instagrama",
+    "orCall": "Ili pozovi: {phone}",
+    "requestNote": "Ovo je zahtev za termin. Salon ti potvrđuje termin porukom ili pozivom.",
+    "sentNote": "Zahtev je pripremljen. Kada pošalješ poruku, salon će ti potvrditi termin porukom ili pozivom.",
+    "copied": "Poruka je kopirana — nalepi je u Instagram chat",
+    "copyFailed": "Kopiranje nije uspelo. Označi poruku ispod i kopiraj je ručno.",
+    "preview": "Pregled poruke",
+    "errors": {
+      "service": "Izaberi uslugu.",
+      "date": "Izaberi datum.",
+      "datePast": "Taj datum je prošao. Izaberi današnji ili neki budući dan.",
+      "dateClosed": "Salon ne radi {day}. Izaberi drugi dan.",
+      "time": "Izaberi okvirno vreme.",
+      "timeInvalid": "To vreme nije u radnom vremenu za izabrani dan.",
+      "name": "Upiši ime i prezime (najmanje 2 slova).",
+      "phone": "Broj telefona nije ispravan.",
+      "summary": "Proveri označena polja."
+    },
+    "message": {
+      "greeting": "Zdravo, želim da zakažem termin u Dirty Cut-u.",
+      "service": "Usluga",
+      "date": "Datum",
+      "time": "Vreme",
+      "name": "Ime",
+      "phone": "Telefon",
+      "note": "Napomena"
+    }
+  },
+  "location": {
+    "kicker": "06 — Lokacija i kontakt",
+    "title": "Svrati",
+    "address": "Adresa",
+    "phone": "Telefon",
+    "social": "Društvene mreže",
+    "hours": "Radno vreme",
+    "closed": "Zatvoreno",
+    "navigate": "Navigacija",
+    "mapLoad": "Učitaj mapu",
+    "mapNote": "Mapa se učitava sa Google-a."
+  },
+  "footer": {
+    "rights": "© {year} Dirty Cut. Sva prava zadržana.",
+    "toTop": "Na vrh",
+    "tagline": "Hair and Barber Shop · Novi Sad"
+  },
+  "toast": {
+    "popupBlocked": "Pregledač je blokirao novi prozor. Otvaram u ovoj kartici…"
+  }
+}

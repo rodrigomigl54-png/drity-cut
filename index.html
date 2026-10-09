@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title data-i18n="meta.title"></title>
+  <meta name="description" data-i18n-attr="content:meta.description" />
+  <meta name="theme-color" content="#0B0B0B" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" data-cfg-attr="href:siteUrl" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sr_RS" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Dirty Cut" />
+  <meta property="og:title" data-i18n-attr="content:meta.title" />
+  <meta property="og:description" data-i18n-attr="content:meta.description" />
+  <meta property="og:url" data-cfg-attr="content:siteUrl" />
+  <meta property="og:image" data-cfg-attr="content:ogImage" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" data-i18n-attr="content:meta.ogAlt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-attr="content:meta.title" />
+  <meta name="twitter:description" data-i18n-attr="content:meta.description" />
+  <meta name="twitter:image" data-cfg-attr="content:ogImage" />
+
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!--JSON-LD-->
+
+  <script>
+    // Pre prvog iscrtavanja: da li se prikazuje intro (sprečava "bljesak" sajta).
+    (function () {
+      var d = document.documentElement, q = location.search, seen = false;
+      try { seen = sessionStorage.getItem('dc-intro-seen') === '1'; } catch (e) {}
+      var show = /intro=force/.test(q) || (!seen && !/intro=off/.test(q));
+      d.setAttribute('data-intro', show ? 'pending' : 'off');
+      d.classList.add('js');
+      setTimeout(function () { d.classList.add('is-ready'); }, 12000);
+      try { var l = localStorage.getItem('dc-lang'); if (l === 'en' || l === 'sr') d.setAttribute('lang', l); } catch (e) {}
+    })();
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skipToContent"></a>
+
+  <!-- ═════════════ INTRO ═════════════ -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" data-i18n-attr="aria-label:intro.label">
+    <div class="intro__stage" id="intro-stage"></div>
+    <div class="intro__fallback" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="/src/assets/images/logo-720.webp" />
+        <img src="/src/assets/images/logo-360.png" alt="" width="360" height="360" />
+      </picture>
+    </div>
+    <div class="intro__ui">
+      <button class="intro__sound" type="button" id="intro-sound" aria-pressed="false" data-i18n-attr="aria-label:a11y.soundOn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="snd-on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6"/><path class="snd-off" d="M16.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <button class="intro__skip" type="button" id="intro-skip"><span data-i18n="intro.skip"></span> <span aria-hidden="true">→</span></button>
+    </div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a class="header__logo" href="#top" data-i18n-attr="aria-label:a11y.home">
+        <picture>
+          <source type="image/webp" srcset="/src/assets/images/logo-360.webp" />
+          <img src="/src/assets/images/logo-360.png" alt="" width="64" height="64" />
+        </picture>
+      </a>
+      <nav class="nav" data-i18n-attr="aria-label:a11y.mainNav">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#usluge" data-i18n="nav.services"></a></li>
+          <li><a class="nav__link" href="#galerija" data-i18n="nav.gallery"></a></li>
+          <li><a class="nav__link" href="#ocene" data-i18n="nav.reviews"></a></li>
+          <li><a class="nav__link" href="#o-nama" data-i18n="nav.about"></a></li>
+          <li><a class="nav__link" href="#lokacija" data-i18n="nav.location"></a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <div class="lang" role="group" data-i18n-attr="aria-label:a11y.langSwitch">
+          <button type="button" class="lang__btn" data-lang="sr" aria-pressed="true">SR</button>
+          <span class="lang__sep" aria-hidden="true">|</span>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--solid btn--sm header__cta" href="#zakazivanje" data-i18n="nav.book"></a>
+        <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mobile-menu" data-i18n-attr="aria-label:a11y.menuOpen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mmenu" id="mobile-menu" hidden>
+    <nav class="mmenu__nav" data-i18n-attr="aria-label:a11y.mainNav">
+      <a class="mmenu__link" href="#usluge"><span class="mmenu__no">01</span><span data-i18n="nav.services"></span></a>
+      <a class="mmenu__link" href="#galerija"><span class="mmenu__no">02</span><span data-i18n="nav.gallery"></span></a>
+      <a class="mmenu__link" href="#ocene"><span class="mmenu__no">03</span><span data-i18n="nav.reviews"></span></a>
+      <a class="mmenu__link" href="#o-nama"><span class="mmenu__no">04</span><span data-i18n="nav.about"></span></a>
+      <a class="mmenu__link" href="#zakazivanje"><span class="mmenu__no">05</span><span data-i18n="nav.book"></span></a>
+      <a class="mmenu__link" href="#lokacija"><span class="mmenu__no">06</span><span data-i18n="nav.location"></span></a>
+    </nav>
+    <div class="mmenu__foot">
+      <div class="lang" role="group" data-i18n-attr="aria-label:a11y.langSwitch">
+        <button type="button" class="lang__btn" data-lang="sr" aria-pressed="true">SR</button>
+        <span class="lang__sep" aria-hidden="true">|</span>
+        <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="mmenu__phone" data-cfg-attr="href:telHref" data-cfg="phoneDisplay"></a>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <!-- ═════════════ HERO ═════════════ -->
+    <section class="hero" id="top">
+      <div class="hero__media" aria-hidden="false">
+        <picture>
+          <source type="image/avif" srcset="/src/assets/images/work-1-480.avif 480w, /src/assets/images/work-1-960.avif 960w, /src/assets/images/work-1-1440.avif 1440w" sizes="(min-width: 900px) 46vw, 100vw" />
+          <source type="image/webp" srcset="/src/assets/images/work-1-480.webp 480w, /src/assets/images/work-1-960.webp 960w, /src/assets/images/work-1-1440.webp 1440w" sizes="(min-width: 900px) 46vw, 100vw" />
+          <img class="hero__img" id="hero-img" src="/src/assets/images/work-1-960.jpg" srcset="/src/assets/images/work-1-480.jpg 480w, /src/assets/images/work-1-960.jpg 960w, /src/assets/images/work-1-1440.jpg 1440w" sizes="(min-width: 900px) 46vw, 100vw" width="1440" height="1440" fetchpriority="high" decoding="async" data-i18n-attr="alt:hero.imgAlt" />
+        </picture>
+        <span class="hero__cutline" aria-hidden="true"></span>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow" data-enter style="--i:0" data-i18n="hero.eyebrow"></p>
+        <h1 class="hero__title">
+          <span class="hero__line h-cut" data-i18n="hero.line1"></span>
+          <span class="hero__line hero__line--outline h-cut" data-i18n="hero.line2"></span>
+        </h1>
+        <p class="hero__sub" data-enter style="--i:3" data-i18n="hero.sub"></p>
+
+        <div class="hero__ctas" data-enter style="--i:4">
+          <a class="btn btn--solid" href="#zakazivanje"><span data-i18n="hero.cta"></span></a>
+          <a class="btn btn--ghost" href="#usluge"><span data-i18n="hero.ctaSecondary"></span></a>
+        </div>
+
+        <div class="hero__meta" data-enter style="--i:5">
+          <div class="status" data-status>
+            <span class="status__dot" aria-hidden="true"></span>
+            <span class="status__label" data-status-label></span>
+            <span class="status__detail" data-status-detail></span>
+          </div>
+          <a class="gbadge" data-cfg-attr="href:googleProfileUrl" target="_blank" rel="noopener">
+            <span class="gbadge__g" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 12.23c0-.7-.06-1.37-.18-2.02H12v3.83h5.39a4.6 4.6 0 0 1-2 3.02v2.5h3.23c1.9-1.74 2.98-4.3 2.98-7.33Z"/><path fill="currentColor" opacity=".75" d="M12 22c2.7 0 4.96-.9 6.62-2.43l-3.23-2.5c-.9.6-2.04.95-3.39.95-2.6 0-4.81-1.76-5.6-4.12H3.07v2.58A10 10 0 0 0 12 22Z"/><path fill="currentColor" opacity=".55" d="M6.4 13.9a6 6 0 0 1 0-3.8V7.52H3.07a10 10 0 0 0 0 8.96L6.4 13.9Z"/><path fill="currentColor" opacity=".9" d="M12 5.98c1.47 0 2.79.5 3.83 1.5l2.86-2.86A10 10 0 0 0 3.07 7.52L6.4 10.1C7.19 7.74 9.4 5.98 12 5.98Z"/></svg>
+            </span>
+            <span class="gbadge__score" data-cfg="ratingText"></span>
+            <span class="stars stars--sm" aria-hidden="true">★★★★★</span>
+            <span class="gbadge__count" data-i18n="hero.reviews" data-i18n-vars="reviewCount"></span>
+          </a>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#usluge"><span data-i18n="hero.scroll"></span><i aria-hidden="true"></i></a>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- ═════════════ USLUGE ═════════════ -->
+    <section class="section services" id="usluge" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="kicker" data-i18n="services.kicker"></p>
+          <h2 class="section__title h-cut" id="services-title" data-i18n="services.title"></h2>
+          <p class="section__intro" data-i18n="services.intro"></p>
+        </header>
+
+        <div class="tabs" role="tablist" aria-labelledby="services-title">
+          <button class="tabs__btn" role="tab" id="tab-musko" aria-controls="panel-musko" aria-selected="true" data-tab="musko"><span data-i18n="services.tabMen"></span></button>
+          <button class="tabs__btn" role="tab" id="tab-zensko" aria-controls="panel-zensko" aria-selected="false" tabindex="-1" data-tab="zensko"><span data-i18n="services.tabWomen"></span></button>
+          <span class="tabs__ink" aria-hidden="true"></span>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="panel-musko" aria-labelledby="tab-musko" tabindex="0">
+          <ul class="price-list" data-services="musko"></ul>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="panel-zensko" aria-labelledby="tab-zensko" tabindex="0" hidden>
+          <ul class="price-list" data-services="zensko"></ul>
+        </div>
+        <p class="services__note" data-i18n="services.note"></p>
+      </div>
+    </section>
+
+    <div class="divider divider--rev" aria-hidden="true"></div>
+
+    <!-- ═════════════ GALERIJA ═════════════ -->
+    <section class="section gallery" id="galerija" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <p class="kicker" data-i18n="gallery.kicker"></p>
+            <h2 class="section__title h-cut" id="gallery-title" data-i18n="gallery.title"></h2>
+          </div>
+          <p class="section__intro" data-i18n="gallery.intro"></p>
+        </header>
+        <div class="gallery__grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden>
+      <div class="lightbox__frame">
+        <picture class="lightbox__pic"><img class="lightbox__img" alt="" /></picture>
+      </div>
+      <p class="lightbox__caption" aria-live="polite"></p>
+      <span class="lightbox__counter" aria-hidden="true"></span>
+      <button class="lightbox__btn lightbox__close" type="button" data-i18n-attr="aria-label:a11y.close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <button class="lightbox__btn lightbox__prev" type="button" data-i18n-attr="aria-label:a11y.prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <button class="lightbox__btn lightbox__next" type="button" data-i18n-attr="aria-label:a11y.next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    </div>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- ═════════════ OCENE ═════════════ -->
+    <section class="section reviews" id="ocene" aria-labelledby="reviews-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="kicker" data-i18n="reviews.kicker"></p>
+          <h2 class="section__title h-cut" id="reviews-title" data-i18n="reviews.title"></h2>
+        </header>
+
+        <div class="rating">
+          <div class="rating__score">
+            <span class="rating__num" data-cfg="ratingText" data-count-to></span>
+            <div class="rating__stars stars" role="img" data-i18n-attr="aria-label:a11y.stars" data-i18n-vars="ratingN">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+          <div class="rating__meta">
+            <p class="rating__label" data-i18n="reviews.googleLabel"></p>
+            <p class="rating__count" data-i18n="reviews.count" data-i18n-vars="reviewCount"></p>
+            <a class="btn btn--ghost" data-cfg-attr="href:googleProfileUrl" target="_blank" rel="noopener"><span data-i18n="reviews.seeAll"></span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="reviews__slider" id="reviews-slider" hidden>
+          <div class="reviews__track" id="reviews-track" tabindex="0" role="region" data-i18n-attr="aria-label:a11y.reviewsSlider"></div>
+        </div>
+
+        <form class="leave" id="leave-review" novalidate>
+          <div class="leave__head">
+            <h3 class="leave__title" data-i18n="reviews.leaveTitle"></h3>
+            <p class="leave__intro" data-i18n="reviews.leaveIntro"></p>
+          </div>
+          <fieldset class="leave__stars">
+            <legend class="field__label" data-i18n="reviews.yourRating"></legend>
+            <div class="star-input" id="star-input"></div>
+            <span class="star-input__label" id="star-label" aria-live="polite"></span>
+            <p class="field__error" data-error="rating"></p>
+          </fieldset>
+          <div class="field leave__text">
+            <label class="field__label" for="lr-text" data-i18n="reviews.textLabel"></label>
+            <textarea class="field__input" id="lr-text" name="text" rows="3" maxlength="1200" data-i18n-attr="placeholder:reviews.textPlaceholder"></textarea>
+            <p class="field__error" data-error="text"></p>
+          </div>
+          <div class="field leave__name">
+            <label class="field__label" for="lr-name" data-i18n="reviews.nameLabel"></label>
+            <input class="field__input" id="lr-name" name="name" type="text" autocomplete="name" maxlength="80" />
+          </div>
+          <div class="leave__actions">
+            <button class="btn btn--solid" type="submit" value="google"><span data-i18n="reviews.toGoogle"></span></button>
+            <button class="btn btn--ghost" type="submit" value="salon"><span data-i18n="reviews.toSalon"></span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="divider divider--rev" aria-hidden="true"></div>
+
+    <!-- ═════════════ O NAMA ═════════════ -->
+    <section class="section about" id="o-nama" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__text">
+          <p class="kicker" data-i18n="about.kicker"></p>
+          <h2 class="section__title h-cut" id="about-title" data-i18n="about.title"></h2>
+          <p class="about__p" data-i18n="about.p1"></p>
+          <p class="about__p" data-i18n="about.p2"></p>
+          <dl class="facts">
+            <div class="facts__item"><dt class="facts__label" data-i18n="about.fact1Label"></dt><dd class="facts__value" data-i18n="about.fact1Value"></dd></div>
+            <div class="facts__item"><dt class="facts__label" data-i18n="about.fact2Label"></dt><dd class="facts__value" data-i18n="about.fact2Value"></dd></div>
+            <div class="facts__item"><dt class="facts__label" data-i18n="about.fact3Label"></dt><dd class="facts__value" data-i18n="about.fact3Value"></dd></div>
+          </dl>
+        </div>
+        <figure class="about__media reveal-img">
+          <picture>
+            <source type="image/avif" srcset="/src/assets/images/salon-2-480.avif 480w, /src/assets/images/salon-2-960.avif 960w" sizes="(min-width: 900px) 40vw, 100vw" />
+            <source type="image/webp" srcset="/src/assets/images/salon-2-480.webp 480w, /src/assets/images/salon-2-960.webp 960w" sizes="(min-width: 900px) 40vw, 100vw" />
+            <img src="/src/assets/images/salon-2-960.jpg" srcset="/src/assets/images/salon-2-480.jpg 480w, /src/assets/images/salon-2-960.jpg 960w" sizes="(min-width: 900px) 40vw, 100vw" width="960" height="1203" loading="lazy" decoding="async" data-i18n-attr="alt:about.imgAlt" />
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- ═════════════ ZAKAZIVANJE ═════════════ -->
+    <section class="section booking" id="zakazivanje" aria-labelledby="booking-title">
+      <div class="container booking__grid">
+        <header class="section__head booking__head">
+          <p class="kicker" data-i18n="booking.kicker"></p>
+          <h2 class="section__title h-cut" id="booking-title" data-i18n="booking.title"></h2>
+          <p class="section__intro" data-i18n="booking.intro"></p>
+          <p class="booking__request" data-i18n="booking.requestNote"></p>
+          <a class="booking__call" data-cfg-attr="href:telHref" data-i18n="booking.orCall" data-i18n-vars="phoneDisplay"></a>
+        </header>
+
+        <form class="bform" id="booking-form" novalidate>
+          <p class="bform__summary" id="bform-summary" role="alert" hidden></p>
+
+          <div class="field">
+            <label class="field__label" for="bf-service" data-i18n="booking.service"></label>
+            <div class="select">
+              <select class="field__input" id="bf-service" name="service" required aria-describedby="err-service"></select>
+            </div>
+            <p class="field__error" id="err-service" data-error="service"></p>
+          </div>
+
+          <fieldset class="field" id="bf-date-group" aria-describedby="err-date">
+            <legend class="field__label" data-i18n="booking.date"></legend>
+            <div class="days" id="bf-days"></div>
+            <div class="other-date">
+              <label class="other-date__label" for="bf-date" data-i18n="booking.otherDate"></label>
+              <input class="field__input other-date__input" type="date" id="bf-date" name="date" />
+            </div>
+            <p class="field__error" id="err-date" data-error="date"></p>
+          </fieldset>
+
+          <fieldset class="field" aria-describedby="err-time">
+            <legend class="field__label" data-i18n="booking.time"></legend>
+            <div class="slots" id="bf-slots"></div>
+            <p class="field__error" id="err-time" data-error="time"></p>
+          </fieldset>
+
+          <div class="field-row">
+            <div class="field">
+              <label class="field__label" for="bf-name" data-i18n="booking.name"></label>
+              <input class="field__input" id="bf-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="err-name" />
+              <p class="field__error" id="err-name" data-error="name"></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="bf-phone" data-i18n="booking.phone"></label>
+              <input class="field__input" id="bf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="24" aria-describedby="err-phone" />
+              <p class="field__error" id="err-phone" data-error="phone"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="bf-note" data-i18n="booking.note"></label>
+            <textarea class="field__input" id="bf-note" name="note" rows="3" maxlength="500" data-i18n-attr="placeholder:booking.notePlaceholder"></textarea>
+          </div>
+
+          <div class="bform__actions">
+            <button class="btn btn--solid btn--wa" type="submit" value="whatsapp" id="bf-wa">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+              <span data-i18n="booking.sendWhatsApp"></span>
+            </button>
+            <button class="btn btn--ghost btn--ig" type="submit" value="instagram" id="bf-ig">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
+              <span data-i18n="booking.sendInstagram"></span>
+            </button>
+          </div>
+
+          <div class="bform__done" id="bform-done" hidden>
+            <p class="bform__done-text" data-i18n="booking.sentNote"></p>
+            <details class="bform__preview">
+              <summary data-i18n="booking.preview"></summary>
+              <pre class="bform__message" id="bform-message"></pre>
+            </details>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="divider divider--rev" aria-hidden="true"></div>
+
+    <!-- ═════════════ LOKACIJA ═════════════ -->
+    <section class="section location" id="lokacija" aria-labelledby="location-title">
+      <div class="container location__grid">
+        <div class="location__info">
+          <p class="kicker" data-i18n="location.kicker"></p>
+          <h2 class="section__title h-cut" id="location-title" data-i18n="location.title"></h2>
+
+          <dl class="contact">
+            <div class="contact__row">
+              <dt data-i18n="location.address"></dt>
+              <dd><address><span data-cfg="street"></span><br /><span data-cfg="cityLine"></span></address></dd>
+            </div>
+            <div class="contact__row">
+              <dt data-i18n="location.phone"></dt>
+              <dd><a class="contact__link" data-cfg-attr="href:telHref" data-cfg="phoneIntl"></a></dd>
+            </div>
+            <div class="contact__row">
+              <dt data-i18n="location.social"></dt>
+              <dd class="contact__social">
+                <a class="icon-link" data-cfg-attr="href:whatsappHref" target="_blank" rel="noopener" data-i18n-attr="aria-label:a11y.whatsapp">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+                  WhatsApp
+                </a>
+                <a class="icon-link" data-cfg-attr="href:instagramHref" target="_blank" rel="noopener" data-i18n-attr="aria-label:a11y.instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
+                  <span data-cfg="instagramAt"></span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="hours">
+            <h3 class="hours__title"><span data-i18n="location.hours"></span>
+              <span class="status status--inline" data-status><span class="status__dot" aria-hidden="true"></span><span class="status__label" data-status-label></span></span>
+            </h3>
+            <table class="hours__table" id="hours-table"></table>
+          </div>
+
+          <a class="btn btn--solid" data-cfg-attr="href:directionsHref" target="_blank" rel="noopener"><span data-i18n="location.navigate"></span> <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="location__map" id="map">
+          <div class="map__placeholder">
+            <p class="map__address"><span data-cfg="street"></span></p>
+            <button class="btn btn--ghost" type="button" id="map-load"><span data-i18n="location.mapLoad"></span></button>
+            <p class="map__note" data-i18n="location.mapNote"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <picture>
+          <source type="image/webp" srcset="/src/assets/images/logo-360.webp" />
+          <img src="/src/assets/images/logo-360.png" alt="Dirty Cut" width="120" height="120" loading="lazy" />
+        </picture>
+        <p class="footer__tagline" data-i18n="footer.tagline"></p>
+      </div>
+      <div class="footer__contact">
+        <address><span data-cfg="street"></span><br /><span data-cfg="cityLine"></span></address>
+        <a class="contact__link" data-cfg-attr="href:telHref" data-cfg="phoneIntl"></a>
+      </div>
+      <div class="footer__social">
+        <a class="icon-link" data-cfg-attr="href:instagramHref" target="_blank" rel="noopener"><span data-cfg="instagramAt"></span></a>
+        <a class="icon-link" data-cfg-attr="href:whatsappHref" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__rights" data-i18n="footer.rights" data-i18n-vars="year"></p>
+        <a class="footer__top" href="#top" data-i18n-attr="aria-label:a11y.toTop"><span data-i18n="footer.toTop"></span> <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor is-hidden" id="cursor" aria-hidden="true">
+    <svg viewBox="0 0 40 40" width="34" height="34">
+      <g class="cursor__blade cursor__blade--a"><path d="M4 4 L22 19 L20 21 Z" fill="currentColor"/><circle cx="26" cy="27" r="5" fill="none" stroke="currentColor" stroke-width="2"/></g>
+      <g class="cursor__blade cursor__blade--b"><path d="M4 4 L19 22 L21 20 Z" fill="currentColor" opacity=".85"/><circle cx="16" cy="31" r="5" fill="none" stroke="currentColor" stroke-width="2"/></g>
+      <circle cx="20" cy="20" r="1.4" fill="var(--accent)"/>
+    </svg>
+  </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "title": "Dirty Cut — men's & women's haircuts | Novi Sad",
+    "description": "Dirty Cut is a unisex hair salon in Novi Sad, Serbia: men's and women's cuts, fades, beards, colouring, highlights and formal styling. Bulevar Jovana Dučića 39D. Book via WhatsApp or Instagram.",
+    "ogAlt": "Dirty Cut logo on concrete"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "home": "Dirty Cut — home",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "langSwitch": "Language",
+    "mainNav": "Main navigation",
+    "close": "Close",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "stars": "{n} out of 5 stars",
+    "toTop": "Back to top",
+    "soundOn": "Sound on",
+    "soundOff": "Sound off",
+    "mapTitle": "Map: Dirty Cut, Bulevar Jovana Dučića 39D, Novi Sad",
+    "reviewsSlider": "Reviews, drag for more",
+    "phone": "Call Dirty Cut",
+    "whatsapp": "Message us on WhatsApp",
+    "instagram": "Dirty Cut on Instagram"
+  },
+  "nav": {
+    "services": "Services",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "about": "About",
+    "location": "Location",
+    "book": "Book"
+  },
+  "intro": {
+    "skip": "Skip",
+    "label": "Intro animation"
+  },
+  "hero": {
+    "eyebrow": "Unisex hair salon · Novi Sad",
+    "line1": "Dirty name.",
+    "line2": "Clean cut.",
+    "sub": "Men's and women's cuts, fades, beards, colour and formal styling — in a salon of raw concrete, red curtains and greenery on Bulevar Jovana Dučića.",
+    "cta": "Book an appointment",
+    "ctaSecondary": "See services",
+    "reviews": "{count} reviews on Google",
+    "imgAlt": "Barber cutting a client's hair with clippers at Dirty Cut, reflected in the mirror",
+    "scroll": "Scroll"
+  },
+  "status": {
+    "open": "Open now",
+    "closed": "Closed",
+    "closesAt": "Closes at {time}",
+    "opensAt": "Opens at {time}",
+    "opensTomorrow": "Opens tomorrow at {time}",
+    "opensOn": "Opens {day} at {time}"
+  },
+  "days": {
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday",
+    "sat": "Saturday",
+    "sun": "Sunday",
+    "onMon": "on Monday",
+    "onTue": "on Tuesday",
+    "onWed": "on Wednesday",
+    "onThu": "on Thursday",
+    "onFri": "on Friday",
+    "onSat": "on Saturday",
+    "onSun": "on Sunday",
+    "short": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "closed": "closed",
+    "today": "today"
+  },
+  "months": {
+    "short": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "services": {
+    "kicker": "01 — Services & prices",
+    "title": "Cut to fit",
+    "intro": "One salon, two chairs, one standard: precise, clean, never rushed.",
+    "tabMen": "Men",
+    "tabWomen": "Women",
+    "priceOnRequest": "Price on request",
+    "currency": "RSD",
+    "minutes": "{n} min",
+    "note": "Prices are indicative. You get the exact price for your hair when you book.",
+    "bookThis": "Book"
+  },
+  "gallery": {
+    "kicker": "02 — Our work",
+    "title": "From the chair",
+    "intro": "Work and the salon space. Click a photo to view it full screen.",
+    "open": "Open photo: {alt}",
+    "counter": "{i} / {n}",
+    "instaTitle": "More work on Instagram",
+    "instaCta": "Follow @{handle}",
+    "alt": {
+      "work1": "Barber in a purple hoodie cutting a client's hair with clippers, reflected in the mirror",
+      "work2": "Client with a groomed long beard and styled moustache after a treatment",
+      "salon1": "Salon interior: two black barber chairs, concrete wall, red curtains and plants",
+      "salon2": "Burgundy barber chair in front of a mirror in the concrete-walled salon"
+    }
+  },
+  "reviews": {
+    "kicker": "03 — Reviews",
+    "title": "Five out of five",
+    "count": "{count} reviews on Google",
+    "seeAll": "See all reviews",
+    "googleLabel": "Average rating on Google",
+    "leaveTitle": "Leave a review",
+    "leaveIntro": "Been to see us? Rate your cut — the review goes to our Google profile or straight to us.",
+    "yourRating": "Your rating",
+    "ratingLabels": ["Poor", "Could be better", "Good", "Great", "Perfect"],
+    "textLabel": "Your experience",
+    "textPlaceholder": "How did you like the cut, the vibe, the service…",
+    "nameLabel": "Name (optional)",
+    "toGoogle": "Post on Google",
+    "toSalon": "Send to the salon",
+    "copiedGoogle": "Review text copied — paste it on our Google profile.",
+    "thanks": "Thanks for your review!",
+    "errRating": "Choose a star rating.",
+    "errText": "Write at least a few words (minimum 10 characters).",
+    "messageIntro": "Review for Dirty Cut: {stars} ({n}/5)",
+    "messageFrom": "— {name}"
+  },
+  "about": {
+    "kicker": "04 — About",
+    "title": "Concrete. Steel. Character.",
+    "p1": "Dirty Cut is a unisex hair salon in Novi Sad. Men and women sit in the same chair and get the same thing: a cut designed for them, not copied from a catalogue.",
+    "p2": "Raw concrete, red curtains and greenery — the space is rough on the outside and precise on the inside. Just like a good fade.",
+    "fact1Value": "5.0",
+    "fact1Label": "Google rating",
+    "fact2Value": "M / F",
+    "fact2Label": "unisex salon",
+    "fact3Value": "39D",
+    "fact3Label": "Bulevar Jovana Dučića",
+    "imgAlt": "Burgundy barber chair at Dirty Cut"
+  },
+  "booking": {
+    "kicker": "05 — Booking",
+    "title": "Book an appointment",
+    "intro": "Pick a service, a day and a rough time. The message writes itself — you just send it.",
+    "service": "Service",
+    "servicePlaceholder": "Choose a service",
+    "groupMen": "Men",
+    "groupWomen": "Women",
+    "date": "Date",
+    "otherDate": "Or pick another date",
+    "time": "Preferred time",
+    "timeHint": "Pick a date first.",
+    "noSlots": "No more slots are available on this day.",
+    "name": "Full name",
+    "phone": "Phone number (optional)",
+    "note": "Note (optional)",
+    "notePlaceholder": "E.g. short on the sides, longer on top…",
+    "sendWhatsApp": "Send via WhatsApp",
+    "sendInstagram": "Send via Instagram",
+    "orCall": "Or call: {phone}",
+    "requestNote": "This is an appointment request. The salon confirms your appointment by message or phone.",
+    "sentNote": "Your request is ready. Once you send the message, the salon will confirm your appointment by message or phone.",
+    "copied": "Message copied — paste it into the Instagram chat",
+    "copyFailed": "Copying failed. Select the message below and copy it manually.",
+    "preview": "Message preview",
+    "errors": {
+      "service": "Choose a service.",
+      "date": "Choose a date.",
+      "datePast": "That date has passed. Choose today or a future day.",
+      "dateClosed": "The salon is closed {day}. Choose another day.",
+      "time": "Choose a preferred time.",
+      "timeInvalid": "That time is outside the opening hours for the chosen day.",
+      "name": "Enter your full name (at least 2 letters).",
+      "phone": "The phone number is not valid.",
+      "summary": "Please check the highlighted fields."
+    },
+    "message": {
+      "greeting": "Hello, I would like to book an appointment at Dirty Cut.",
+      "service": "Service",
+      "date": "Date",
+      "time": "Time",
+      "name": "Name",
+      "phone": "Phone",
+      "note": "Note"
+    }
+  },
+  "location": {
+    "kicker": "06 — Location & contact",
+    "title": "Drop by",
+    "address": "Address",
+    "phone": "Phone",
+    "social": "Social",
+    "hours": "Opening hours",
+    "closed": "Closed",
+    "navigate": "Directions",
+    "mapLoad": "Load map",
+    "mapNote": "The map is loaded from Google."
+  },
+  "footer": {
+    "rights": "© {year} Dirty Cut. All rights reserved.",
+    "toTop": "Back to top",
+    "tagline": "Hair and Barber Shop · Novi Sad"
+  },
+  "toast": {
+    "popupBlocked": "Your browser blocked the new window. Opening in this tab…"
+  }
+}
