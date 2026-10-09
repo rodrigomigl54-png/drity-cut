@@ -1,0 +1,17 @@
+[
+  { "id": "musko-sisanje", "category": "musko", "name_sr": "Muško šišanje", "name_en": "Men's haircut", "duration_min": null, "price_rsd": null },
+  { "id": "fade", "category": "musko", "name_sr": "Fade", "name_en": "Fade", "duration_min": null, "price_rsd": null },
+  { "id": "sisanje-brada", "category": "musko", "name_sr": "Šišanje + brada", "name_en": "Haircut + beard", "duration_min": null, "price_rsd": null },
+  { "id": "brada", "category": "musko", "name_sr": "Brada", "name_en": "Beard", "duration_min": null, "price_rsd": null },
+  { "id": "pranje-kose", "category": "musko", "name_sr": "Pranje kose", "name_en": "Hair wash", "duration_min": null, "price_rsd": null },
+  { "id": "decije-sisanje", "category": "musko", "name_sr": "Dečije šišanje", "name_en": "Kids' haircut", "duration_min": null, "price_rsd": null },
+
+  { "id": "zensko-kratka", "category": "zensko", "name_sr": "Žensko šišanje — kratka kosa", "name_en": "Women's haircut — short hair", "duration_min": null, "price_rsd": null },
+  { "id": "zensko-srednja", "category": "zensko", "name_sr": "Žensko šišanje — srednja kosa", "name_en": "Women's haircut — medium hair", "duration_min": null, "price_rsd": null },
+  { "id": "zensko-duga", "category": "zensko", "name_sr": "Žensko šišanje — duga kosa", "name_en": "Women's haircut — long hair", "duration_min": null, "price_rsd": null },
+  { "id": "feniranje", "category": "zensko", "name_sr": "Feniranje", "name_en": "Blow-dry", "duration_min": null, "price_rsd": null },
+  { "id": "farbanje", "category": "zensko", "name_sr": "Farbanje", "name_en": "Hair colouring", "duration_min": null, "price_rsd": null },
+  { "id": "pramenovi-balayage", "category": "zensko", "name_sr": "Pramenovi / balayage", "name_en": "Highlights / balayage", "duration_min": null, "price_rsd": null },
+  { "id": "tretman", "category": "zensko", "name_sr": "Tretman za kosu", "name_en": "Hair treatment", "duration_min": null, "price_rsd": null },
+  { "id": "svecana-frizura", "category": "zensko", "name_sr": "Svečana frizura", "name_en": "Formal updo", "duration_min": null, "price_rsd": null }
+]
