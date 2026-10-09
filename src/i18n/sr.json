@@ -203,7 +203,9 @@
     "closed": "Zatvoreno",
     "navigate": "Navigacija",
     "mapLoad": "Učitaj mapu",
-    "mapNote": "Mapa se učitava sa Google-a."
+    "mapNote": "Mapa se učitava sa Google-a.",
+    "mapOpen": "Otvori mapu",
+    "mapBlocked": "Mapa ne može da se prikaže u ovom pregledu — otvori je u Google mapama."
   },
   "footer": {
     "rights": "© {year} Dirty Cut. Sva prava zadržana.",

@@ -1,8 +1,7 @@
-// Mapa (lenjo učitavanje), kursor-makaze, zrno, tekstura betona.
+// Mapa (lenjo učitavanje) i kursor-makaze.
 import { links } from '../config.js';
 import { t } from '../lib/i18n.js';
 import { prefersReducedMotion } from '../lib/ui.js';
-import concreteUrl from '../assets/images/concrete-dark.jpg?url';
 
 /* ── Google mapa: učitava se tek kada se sekcija približi ekranu ── */
 export function initMap() {
@@ -19,34 +18,34 @@ export function initMap() {
     f.referrerPolicy = 'no-referrer-when-downgrade';
     f.allowFullscreen = true;
     box.appendChild(f);
-    f.addEventListener('load', () => box.querySelector('.map__placeholder')?.remove(), { once: true });
   };
+  // Ako okruženje zabrani Google mape (npr. pregled sa strogim CSP pravilima),
+  // ukloni prazan okvir i prikaži karticu sa adresom i dugmetom za Google mape.
+  document.addEventListener('securitypolicyviolation', (e) => {
+    if (!/google\./.test(e.blockedURI || '')) return;
+    box.querySelector('iframe')?.remove();
+    box.classList.add('is-blocked');
+    const btn = document.getElementById('map-load');
+    if (btn && btn.tagName === 'BUTTON') {
+      const a = document.createElement('a');
+      a.className = btn.className;
+      a.id = 'map-load';
+      a.href = links.directions();
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = '<span data-i18n="location.mapOpen"></span> <span aria-hidden="true">↗</span>';
+      a.firstChild.textContent = t('location.mapOpen');
+      btn.replaceWith(a);
+      const note = box.querySelector('.map__note');
+      if (note) { note.setAttribute('data-i18n', 'location.mapBlocked'); note.textContent = t('location.mapBlocked'); }
+    }
+  });
   document.getElementById('map-load')?.addEventListener('click', load);
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((e) => { if (e.some((x) => x.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '300px' });
     io.observe(box);
   }
   document.addEventListener('langchange', () => { const f = box.querySelector('iframe'); if (f) f.title = t('a11y.mapTitle'); });
-}
-
-/* ── Zrno i beton (CSS promenljive) ── */
-export function initTextures() {
-  const root = document.documentElement;
-  root.style.setProperty('--concrete-url', `url("${concreteUrl}")`);
-  const make = () => {
-    const c = document.createElement('canvas');
-    c.width = c.height = 160;
-    const ctx = c.getContext('2d');
-    const img = ctx.createImageData(160, 160);
-    for (let i = 0; i < img.data.length; i += 4) {
-      const v = Math.random() * 255;
-      img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
-      img.data[i + 3] = 255;
-    }
-    ctx.putImageData(img, 0, 0);
-    root.style.setProperty('--noise', `url("${c.toDataURL('image/png')}")`);
-  };
-  ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(make);
 }
 
 /* ── Kursor-makaze: prati miš bez kašnjenja, "seče" na klik ── */

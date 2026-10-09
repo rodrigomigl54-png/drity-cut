@@ -49,8 +49,3 @@ cv2.imwrite('src/intro/tex/concrete_normal.jpg', cv2.resize(nrm[..., ::-1], (768
 rough = np.clip(0.78 + 0.18 * (mottle - 0.5) + 0.15 * pores, 0, 1)
 cv2.imwrite('src/intro/tex/concrete_rough.jpg', cv2.resize((rough * 255).astype(np.uint8), (512, 512)), [cv2.IMWRITE_JPEG_QUALITY, 80])
 
-# dark variant for the website (hero background / dividers)
-dark = np.clip(col * 0.32 + 0.02, 0, 1)
-site = cv2.resize(np.stack([dark * 0.97, dark * 0.98, dark], -1), (512, 512), interpolation=cv2.INTER_AREA)
-cv2.imwrite('src/assets/images/concrete-dark.jpg', (site * 255).astype(np.uint8), [cv2.IMWRITE_JPEG_QUALITY, 74])
-print('concrete ok')

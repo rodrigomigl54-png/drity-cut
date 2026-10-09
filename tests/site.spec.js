@@ -188,3 +188,25 @@ test.describe('Ocene', () => {
     expect(text).toBe('Ocena za Dirty Cut: ★★★★★ (5/5)\nNajbolji fade u gradu, preporuka!\n— Đorđe');
   });
 });
+
+test.describe('Mapa', () => {
+  test('bez dozvole za Google okvire (CSP): kartica sa dugmetom umesto greške', async ({ page }) => {
+    await page.route('**/?intro=off', async (route) => {
+      const r = await route.fetch();
+      await route.fulfill({ response: r, headers: { ...r.headers(), 'content-security-policy': "frame-src 'self'" } });
+    });
+    await page.goto('/?intro=off');
+    await page.locator('#map').scrollIntoViewIfNeeded();
+    await expect(page.locator('#map')).toHaveClass(/is-blocked/);
+    await expect(page.locator('#map iframe')).toHaveCount(0);
+    await expect(page.locator('#map-load')).toHaveAttribute('href', /google\.com\/maps\/dir/);
+    await expect(page.locator('#map-load')).toContainText('Otvori mapu');
+  });
+
+  test('normalno: Google mapa se učitava u sekciji Lokacija', async ({ page, context }) => {
+    await context.route('https://www.google.com/maps**', (r) => r.fulfill({ contentType: 'text/html', body: '<p>map</p>' }));
+    await page.goto('/?intro=off');
+    await page.locator('#map').scrollIntoViewIfNeeded();
+    await expect(page.locator('#map iframe')).toHaveAttribute('src', /google\.com\/maps\?q=Bulevar/);
+  });
+});

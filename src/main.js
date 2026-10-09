@@ -11,7 +11,7 @@ import { initServices } from './modules/services.js';
 import { initGallery } from './modules/gallery.js';
 import { initReviews } from './modules/reviews.js';
 import { initBooking } from './modules/booking.js';
-import { initMap, initTextures, initCursor } from './modules/extras.js';
+import { initMap, initCursor } from './modules/extras.js';
 import { runIntro } from './intro/controller.js';
 
 const root = document.documentElement;
@@ -19,7 +19,6 @@ const ready = () => root.classList.add('is-ready');
 
 // 1) Sajt se kompletno iscrtava odmah (ispod intra)
 initI18n();
-initTextures();
 initHeader();
 initStatus();
 initServices();
