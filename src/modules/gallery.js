@@ -3,7 +3,7 @@ import manifest from '../assets/images/manifest.json';
 import { t } from '../lib/i18n.js';
 import { CONFIG, links } from '../config.js';
 
-const urls = import.meta.glob('../assets/images/*-{480,960,1440}.{avif,webp,jpg}', {
+const urls = import.meta.glob('../assets/images/*-{480,960,1440,1800}.{avif,webp,jpg}', {
   eager: true, query: '?url', import: 'default',
 });
 const url = (name, w, ext) => urls[`../assets/images/${name}-${w}.${ext}`];

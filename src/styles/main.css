@@ -5,8 +5,8 @@
    ══════════════════════════════════════════════════════════════ */
 
 :root {
-  --bg: #0b0b0b;
-  --bg-2: #111110;
+  --bg: #000000;
+  --bg-2: #000000;
   --bg-3: #181716;
   --fg: #f2f0ec;
   --fg-2: #cfccc6;
@@ -30,7 +30,6 @@
   --cut-angle: -14deg;      /* isti ugao kao rez na kraju intra */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-cut: cubic-bezier(0.7, 0, 0.2, 1);
-  --noise: none;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -211,34 +210,6 @@ html.js .h-cut[data-text]::after {
 .btn--sm { min-height: 42px; padding: 0 18px; font-size: 0.74rem; }
 .btn:focus-visible { outline-offset: 4px; }
 
-/* ── Zrno (film grain) ───────────────────────────────────── */
-
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  pointer-events: none;
-  overflow: hidden;
-  opacity: 0.05;
-}
-.grain::before {
-  content: '';
-  position: absolute;
-  inset: -50%;
-  background-image: var(--noise);
-  background-size: 180px 180px;
-  animation: grain 0.9s steps(6) infinite;
-}
-@keyframes grain {
-  0% { transform: translate(0, 0); }
-  17% { transform: translate(-6%, 4%); }
-  33% { transform: translate(5%, -7%); }
-  50% { transform: translate(-3%, 8%); }
-  67% { transform: translate(8%, 2%); }
-  83% { transform: translate(-7%, -5%); }
-  100% { transform: translate(2%, 6%); }
-}
-
 /* ── Header ──────────────────────────────────────────────── */
 
 .header {
@@ -316,7 +287,7 @@ html.js .h-cut[data-text]::after {
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: var(--bg) var(--concrete-url, none) center / 512px repeat;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -350,7 +321,7 @@ html.js .h-cut[data-text]::after {
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
   align-items: end;
   padding: calc(var(--header-h) + 40px) var(--gutter) clamp(56px, 9vh, 100px);
-  background: var(--bg) var(--concrete-url, none) center / 512px repeat;
+  background: var(--bg);
   overflow: hidden;
   isolation: isolate;
 }
@@ -679,7 +650,7 @@ html.is-ready .hero__img { transform: scale(1); transition: transform 2.4s var(-
   justify-content: space-between;
   padding: clamp(14px, 2vw, 24px);
   border: 1px solid var(--line);
-  background: var(--concrete-1) var(--concrete-url, none) center / 512px;
+  background: var(--bg);
   transition: border-color 0.3s;
   overflow: hidden;
 }
@@ -776,7 +747,6 @@ html.is-ready .hero__img { transform: scale(1); transition: transform 2.4s var(-
   gap: 24px 40px;
   padding: clamp(24px, 4vw, 44px);
   border: 1px solid var(--line);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent 60%);
 }
 .leave__head { grid-column: 1 / -1; }
 .leave__title { font-family: var(--f-display); text-transform: uppercase; font-weight: 400; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1; }
@@ -824,14 +794,6 @@ html.is-ready .hero__img { transform: scale(1); transition: transform 2.4s var(-
 /* ── Zakazivanje ─────────────────────────────────────────── */
 
 .booking { background: var(--bg-2); }
-.booking::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--concrete-url, none) center / 512px;
-  opacity: 0.6;
-  pointer-events: none;
-}
 .booking__grid { position: relative; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
 .booking__head { position: sticky; top: calc(var(--header-h) + 32px); margin-bottom: 0; }
 .booking__request { margin-top: 28px; padding-left: 16px; border-left: 1px solid var(--accent); color: var(--fg-2); font-size: 0.92rem; max-width: 42ch; }
@@ -962,7 +924,7 @@ select.field__input option, select.field__input optgroup { background: var(--bg)
   position: relative;
   min-height: 420px;
   border: 1px solid var(--line);
-  background: var(--concrete-1) var(--concrete-url, none) center / 512px;
+  background: var(--bg);
   overflow: hidden;
 }
 .location__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(0.92) contrast(0.9); }
@@ -1183,7 +1145,6 @@ html[data-intro='playing'] .intro { display: block; }
     scroll-behavior: auto !important;
   }
   html { scroll-behavior: auto; }
-  .grain { display: none; }
   html.js .hero [data-enter] { opacity: 1; transform: none; }
   html.js .hero .h-cut { --s: 0; }
   .intro.is-fallback.is-run .intro__fallback img { animation: introfade-rm 1.4s linear both !important; animation-duration: 1.4s !important; }

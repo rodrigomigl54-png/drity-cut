@@ -203,7 +203,9 @@
     "closed": "Closed",
     "navigate": "Directions",
     "mapLoad": "Load map",
-    "mapNote": "The map is loaded from Google."
+    "mapNote": "The map is loaded from Google.",
+    "mapOpen": "Open map",
+    "mapBlocked": "The map can't be shown in this preview — open it in Google Maps."
   },
   "footer": {
     "rights": "© {year} Dirty Cut. All rights reserved.",

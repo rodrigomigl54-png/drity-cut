@@ -1,5 +1,5 @@
 // Pravi responzivne verzije fotografija (AVIF / WebP / JPG) iz assets-src/
-// (izvori su već uvećani AI super-rezolucijom, EDSR x4) i varijante logoa.
+// (izvori su već uvećani AI super-rezolucijom, Real-ESRGAN x4plus) i varijante logoa.
 import sharp from 'sharp';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
@@ -8,7 +8,7 @@ const PUB = 'public';
 mkdirSync(OUT, { recursive: true });
 
 const photos = ['salon-1', 'salon-2', 'work-1', 'work-2'];
-const widths = [480, 960, 1440];
+const widths = [480, 960, 1440, 1800];
 const manifest = {};
 
 for (const name of photos) {
@@ -17,10 +17,10 @@ for (const name of photos) {
   manifest[name] = { w: meta.width, h: meta.height, widths: [] };
   for (const w of widths) {
     if (w > meta.width) continue;
-    const base = sharp(`assets-src/${name}.jpg`).resize({ width: w });
-    await base.clone().avif({ quality: 52 }).toFile(`${OUT}/${name}-${w}.avif`);
-    await base.clone().webp({ quality: 74 }).toFile(`${OUT}/${name}-${w}.webp`);
-    await base.clone().jpeg({ quality: 78, mozjpeg: true }).toFile(`${OUT}/${name}-${w}.jpg`);
+    const base = sharp(`assets-src/${name}.jpg`).resize({ width: w, kernel: 'lanczos3' });
+    await base.clone().avif({ quality: 64, effort: 6 }).toFile(`${OUT}/${name}-${w}.avif`);
+    await base.clone().webp({ quality: 86 }).toFile(`${OUT}/${name}-${w}.webp`);
+    await base.clone().jpeg({ quality: 88, mozjpeg: true }).toFile(`${OUT}/${name}-${w}.jpg`);
     manifest[name].widths.push(w);
   }
 }

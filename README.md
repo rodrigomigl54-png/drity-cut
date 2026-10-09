@@ -88,7 +88,7 @@ Svaki tekst na sajtu (naslovi, dugmad, poruke o greškama, poruka za WhatsApp) n
 
 ### Fotografije
 
-Originali (uvećani AI super-rezolucijom, EDSR ×4) nalaze se u `assets-src/`. Kad dodaš ili zameniš sliku tamo:
+Originali (uvećani AI super-rezolucijom, Real-ESRGAN x4plus) nalaze se u `assets-src/`. Kad dodaš ili zameniš sliku tamo:
 
 ```bash
 npm run assets     # pravi AVIF / WebP / JPG verzije u 3 veličine + logo varijante
