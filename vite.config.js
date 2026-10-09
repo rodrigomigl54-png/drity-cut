@@ -80,6 +80,8 @@ function preloadHero() {
 }
 
 export default defineConfig({
+  // Za GitHub Pages (https://<korisnik>.github.io/drity-cut/) build se pravi sa BASE_PATH=/drity-cut/
+  base: process.env.BASE_PATH || '/',
   plugins: [hydrateHtml(), preloadHero()],
   build: {
     target: 'es2020',
